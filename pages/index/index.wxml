@@ -1,0 +1,27 @@
+<!--index.wxml-->
+<van-search value="{{keyWord}}" name="keyWord" placeholder="城市：请输入搜索关键词"
+    error="true"
+    bind:search="doSearch"
+  ></van-search>
+<view class="container">
+  <view class="userinfo">
+    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+    <block wx:else>
+      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </block>
+  </view>
+  <view class="usermotto">
+    
+    <van-row>
+      <van-col span='18' offset='3'>
+          <text class="motto-txt">{{motto}}</text>
+      </van-col>
+    </van-row>
+     <van-row gutter="10">
+      <van-col span="12"> <van-button plain size='small' bind:click='toWeather' type='primary'>天气预报   </van-button></van-col>
+      <van-col span="12"> <van-button plain size='small' type='primary' bind:click='showMsg'>新闻资讯</van-button></van-col>
+    </van-row>
+    <van-popup show="{{show}}" bind:close="onClose" z-index="100" position="top">锄禾日当午，汗滴禾下土。</van-popup>
+  </view>
+</view>

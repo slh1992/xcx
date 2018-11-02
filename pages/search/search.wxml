@@ -1,0 +1,18 @@
+<!--pages/search.wxml-->
+<block style="position:releative">
+    <van-search value="{{keyWord}}" placeholder="城市：请输入搜索关键词"
+        error="{{true}}"
+        bind:search="searchCity"
+      ></van-search>
+    <van-cell-group>
+      <block wx:if="{{citysempty}}" ><view><text class="msg">未查询到城市数据</text></view></block>
+      <block wx:else>
+        <van-cell title="{{item.location}}" icon="wap-home" is-link url="/pages/weather/weather?city={{item.location}}&pcity={{item.parent_city}}" wx:key="item" wx:for="{{citys}}"/>
+      </block>
+      
+    </van-cell-group>
+
+    <van-toast id="van-toast" />
+</block>
+
+  

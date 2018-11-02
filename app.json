@@ -1,0 +1,39 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/phoneinfo/phoneinfo",
+    "pages/weather/weather",
+    "pages/search/search"
+  ],
+  "requiredBackgroundModes": [
+    "audio"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#f0f0f0",
+    "navigationBarTitleText": "爱尚test",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "selectedColor": "#ffffff"
+      },
+      {
+        "pagePath": "pages/index/index",
+        "text": "乐酷"
+      },
+      {
+        "pagePath": "pages/index/index",
+        "text": "本地歌曲"
+      },
+      {
+        "pagePath": "pages/phoneinfo/phoneinfo",
+        "text": "关于手机",
+        "selectedColor": "#ffffff"
+      }
+    ]
+  }
+}

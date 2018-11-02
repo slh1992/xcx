@@ -1,0 +1,9 @@
+
+<!--phoneinfo.wxxml-->
+ <van-cell-group class="phoneinfo">
+    <van-cell title="品牌"  label="{{info.brand}}" border="{{false}}"></van-cell>
+    <van-cell title="型号"  label="{{info.model}}" border="{{false}}"></van-cell>
+    <van-cell title="操作系统版本"  label="{{info.system}}" border="{{false}}"></van-cell>
+    <van-cell title="微信版本号"  label="{{info.version}}" border="{{false}}"></van-cell>
+    <van-cell title="设备像素比"  label="{{info.pixelRatio}}" border="{{false}}"></van-cell>
+  </van-cell-group>

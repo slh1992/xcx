@@ -1,0 +1,31 @@
+<!--pages/weather.wxml-->
+<view class='main-content'>
+  <van-nav-bar title="{{city}}" left-text="返回" left-arrow fixed="true" bind:click-left="backToOld">
+    <van-icon name="wap-nav" slot="right" bind:click="showMenu"/>
+  </van-nav-bar>
+  <van-panel title="实时天气" class="page-opt">
+    <van-cell-group>
+        <van-cell title="天气状况" value="{{info.cond_txt}}" border="{{false}}" class="iconfont font-white">
+          <van-icon slot="right-icon" class='{{class}}'/>
+        </van-cell>
+        <van-cell title="温度" value="{{info.tmp}}/摄氏度" border="{{false}}" class="iconfont"/>
+        <van-cell title="风向" value="{{info.wind_dir}}" border="{{false}}" class="iconfont"/>
+        <van-cell title="风力" value="{{info.wind_sc}}级" border="{{false}}" class="iconfont"/>
+        <van-cell title="风速" value="{{info.wind_spd}}km/h" border="{{false}}" class="iconfont"/>
+        <van-cell title="能见度" value="{{info.vis}}km" border="{{false}}" class="iconfont"/>
+        <van-cell title="降水量" value="{{info.pcpn}}mm" border="{{false}}" class="iconfont"/>
+        <van-cell title="相对湿度" value="{{info.hum}}" border="{{false}}" class="iconfont"/>
+        <van-cell title="大气压强" value="{{info.pres}}hPa" border="{{false}}" class="iconfont"/>
+    </van-cell-group>
+  </van-panel>
+ 
+  <!--上拉菜单-->
+  <van-action-sheet
+  show="{{isshow}}"
+  actions="{{actions}}"
+  cancel-text="取消"
+  bind:select="onSelect"
+  bind:cancel="onCancel"
+></van-action-sheet>
+<van-toast id="van-toast" />
+</view>

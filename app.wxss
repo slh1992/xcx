@@ -1,0 +1,35 @@
+/**app.wxss**/
+page{
+  height: 100%;
+  width: 100%;
+}
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 200rpx 0;
+  box-sizing: border-box;
+  background: url("http://192.168.1.25:8081/static/img/bkpic02.png");
+  background-size: cover;
+} 
+
+.page-opt{
+  opacity: 0.4;
+}
+
+.font-white{
+  color: #fff;
+}
+
+.msg{
+  display: flex;
+  flex-direction: column;
+  font-size: 16px;
+  font-weight: bold;
+  align-items: center;
+  justify-content: space-between;
+  color: #c0c0c0;
+}
+
