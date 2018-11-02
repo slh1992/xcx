@@ -74,8 +74,11 @@ Page({
   
   doSearch:function(event) {
     wx.navigateTo({
-      url: '/pages/search/search?keyWord=' + event.detail,
+      url: '/pages/search/search?keyWord=' + this.data.keyWord,
     });
+  },
+  changKey:function(event){
+    this.setData({ keyWord: event.detail});
   }
   
 })

@@ -2,8 +2,12 @@
 <block style="position:releative">
     <van-search value="{{keyWord}}" placeholder="城市：请输入搜索关键词"
         error="{{true}}"
+        use-action-slot="{{true}}"
         bind:search="searchCity"
-      ></van-search>
+        bind:change="changKey"
+      >
+      <view slot="action" bind:tap="searchCity">搜索</view>
+      </van-search>
     <van-cell-group>
       <block wx:if="{{citysempty}}" ><view><text class="msg">未查询到城市数据</text></view></block>
       <block wx:else>

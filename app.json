@@ -1,9 +1,10 @@
 {
   "pages": [
     "pages/index/index",
+    "pages/search/search",
     "pages/phoneinfo/phoneinfo",
-    "pages/weather/weather",
-    "pages/search/search"
+    "pages/weather/weather"
+    
   ],
   "requiredBackgroundModes": [
     "audio"

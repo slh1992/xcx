@@ -1,8 +1,12 @@
 <!--index.wxml-->
-<van-search value="{{keyWord}}" name="keyWord" placeholder="城市：请输入搜索关键词"
+<van-search value="{{keyWord}}" placeholder="城市：请输入搜索关键词"
     error="true"
+    use-action-slot="{{true}}"
     bind:search="doSearch"
-  ></van-search>
+    bind:change="changKey"
+  >
+  <view slot="action" bind:tap="doSearch">搜索</view>
+  </van-search>
 <view class="container">
   <view class="userinfo">
     <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>

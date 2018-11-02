@@ -68,12 +68,12 @@ Page({
   onShareAppMessage: function () {
   
   },
+  changKey: function (event) {
+    this.setData({ keyWord: event.detail });
+  },
   searchCity: function(event) {
     var obj = this;
     var param = obj.data.keyWord;
-    if (event!=null&&event.detail != null && event.detail!=''){
-      param = event.detail;
-    }
     wx.request({
       url: 'https://search.heweather.com/find',
       data: {
