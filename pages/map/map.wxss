@@ -5,3 +5,20 @@
   width: 95%;
   margin: 10rpx auto;
 }
+
+.mapcontrols{
+  display: block;
+  margin-left: 10rpx;
+  margin-top: 20rpx;
+  height: 50rpx;
+  width: 150rpx;
+}
+
+.control-posi{
+  float: left;
+  color:#2eb012;
+  margin-left: 10rpx;
+  height: 50rpx;
+  width:50rpx; 
+  z-index: 999;
+}

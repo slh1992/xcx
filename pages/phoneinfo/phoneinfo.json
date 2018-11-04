@@ -1,15 +1,4 @@
 {
   "navigationBarTitleText": "查看本机信息",
-  "disableScroll": true,
-  "usingComponents": {
-    "van-row": "/pages/vant-weapp/dist/row/index",
-    "van-col": "/pages/vant-weapp/dist/col/index",
-    "van-badge-group": "/pages/vant-weapp/dist/badge-group/index",
-    "van-badge": "/pages/vant-weapp/dist/badge/index",
-    "van-button": "/pages/vant-weapp/dist/button/index",
-    "van-popup": "/pages/vant-weapp/dist/popup/index",
-    "van-loading": "/pages/vant-weapp/dist/loading/index",
-    "van-cell": "/pages/vant-weapp/dist/cell/index",
-    "van-cell-group": "/pages/vant-weapp/dist/cell-group/index"
-  }
+  "disableScroll": true
 }

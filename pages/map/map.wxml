@@ -1,8 +1,14 @@
 <!--pages/map/map.wxml-->
-
-<map id='mymap' class='mapcontent' longitude="120.139" latitude="30.239" scale='{{scale}}' subkey="PI3BZ-UBARX-2WP4Y-ZQK2H-V4YGJ-OVFW4"
-show-compass show-location bindpoitap="bindpoitap">
+<block style='z-index:0;'>
+<map id='mymap' class='mapcontent' longitude="{{longitude}}" latitude="{{latitude}}" scale='{{scale}}' subkey="{{subkey}}"
+show-compass show-location>
+  <cover-view class='mapcontrols'>
+    <cover-image class="control-posi" src='/pages/img/up_blue.png' bindtap="toUpper"></cover-image>
+    <cover-image class="control-posi" src='/pages/img/down_blue.png' bindtap="toDowner"></cover-image>
+  </cover-view>
 </map>
+</block>
+
 
 
 

@@ -6,9 +6,10 @@
 	"setting": {
 		"urlCheck": false,
 		"es6": true,
-		"postcss": false,
-		"minified": false,
-		"newFeature": true
+		"postcss": true,
+		"minified": true,
+		"newFeature": true,
+		"uglifyFileName": true
 	},
 	"compileType": "miniprogram",
 	"libVersion": "2.3.2",

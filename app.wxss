@@ -2,6 +2,8 @@
 page{
   height: 100%;
   width: 100%;
+  margin: 0rpx;
+  overflow: hidden;
 }
 .container {
   display: flex;
@@ -22,7 +24,7 @@ page{
 }
 
 .font-white{
-  color: #fff;
+  color: rgb(253, 252, 252);
 }
 
 .msg{
@@ -34,4 +36,15 @@ page{
   justify-content: space-between;
   color: #c0c0c0;
 }
+
+@font-face {
+  font-family: 'iconfont';  /* project id 902977 */
+  src: url('//at.alicdn.com/t/font_902977_ehgckt0pgog.eot');
+  src: url('//at.alicdn.com/t/font_902977_ehgckt0pgog.eot?#iefix') format('embedded-opentype'),
+  url('//at.alicdn.com/t/font_902977_ehgckt0pgog.woff') format('woff'),
+  url('//at.alicdn.com/t/font_902977_ehgckt0pgog.ttf') format('truetype'),
+  url('//at.alicdn.com/t/font_902977_ehgckt0pgog.svg#iconfont') format('svg');
+}
+[class="icon-"]
+/*首页*/.icon-home::before{font-family:'iconfont';content: '\e80f';}/*刷新*/.icon-refresh::before{font-family:'iconfont';content: '\e60f';}/*全屏*/.icon-fullscreen::before{font-family:'iconfont';content: '\e801';}/*用户*/.icon-user::before{font-family:'iconfont';content: '\e800';}/*上一级*/.icon-up::before{font-family:'iconfont';content: '\e7ff';}/*下一级*/.icon-down::before{font-family:'iconfont';content: '\e7fe';}/*更多*/.icon-more::before{font-family:'iconfont';content: '\e7fd';}/*配置*/.icon-setting::before{font-family:'iconfont';content: '\e7fc';}/*新建*/.icon-new::before{font-family:'iconfont';content: '\e7fb';}
 
