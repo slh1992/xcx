@@ -16,8 +16,6 @@
     "van-nav-bar": "/pages/vant-weapp/dist/nav-bar/index",
     "van-toast": "/pages/vant-weapp/dist/toast/index"
   },
-  "tabBar": {
-    "list": []
-  },
+  "navigationBarTitleText": "实时天气",
   "disableScroll":true
 }

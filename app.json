@@ -3,8 +3,8 @@
     "pages/index/index",
     "pages/search/search",
     "pages/phoneinfo/phoneinfo",
-    "pages/weather/weather"
-    
+    "pages/weather/weather",
+    "pages/map/map"
   ],
   "requiredBackgroundModes": [
     "audio"

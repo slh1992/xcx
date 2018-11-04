@@ -5,7 +5,7 @@ var weather_codecontainer=new Map();
 weather_codecontainer.set('100','iconqt');
 weather_codecontainer.set('101','icondyzq');
 weather_codecontainer.set('103', 'iconqzdy');
-weather_codecontainer.set('104', 'icoiconytndyzq');
+weather_codecontainer.set('104', 'iconyt');
 weather_codecontainer.set('301', 'iconzheny');
 weather_codecontainer.set('302', 'iconleizy');
 weather_codecontainer.set('303', 'iconleizy');
@@ -43,6 +43,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    local:false,
     city:"杭州市",
     pcity:"杭州市",
     isshow: false,
@@ -62,7 +63,14 @@ Page({
     });
     console.log(options.city)
     if(options.city!=null&&options.city!=''){
-      this.setData({city:options.city,pcity:options.pcity});
+      this.setData({city:options.city,pcity:options.pcity+"市"});
+    }
+
+    /**
+     * 是否本地天气
+     */
+    if(options.local!=null&&options.local!=''){
+      this.setData({ local: options.local});
     }
     
   },
@@ -71,7 +79,7 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-    var city = { name:this.data.city};
+    var city = { name: this.data.city};
     this.getWeatherInfo(city);
   
   },
@@ -120,7 +128,11 @@ Page({
   
   },
  
-  setWeatherInfo: function (data) {
+  setWeatherInfo: function (key,data) {
+    var wea = wx.getStorageSync("weather");
+    console.log(wea);
+    wea[key] = data;
+    wx.setStorageSync("weather", wea);
     this.setData({ class: weather_codecontainer.get(data.cond_code) });
     this.setData({ info: data });
   },
@@ -131,14 +143,14 @@ Page({
     var obj = this;
     var param = city.name;
     if (param == null || param == '') {
-      param = city.lat + "," + city.lon;
+      param ="\'"+ city.lat + "," + city.lon+"\'";
     }
 
     var data = wx.getStorageSync("weather");
     if (data != null && data != '') {
       var wea = data[param];
       if (wea != null && wea != '') {
-        this.setWeatherInfo(wea);
+        this.setWeatherInfo(param,wea);
         return;
       }
     }
@@ -155,18 +167,20 @@ Page({
         'content-type': 'application/json' // 默认值
       },
       success(res) {
+        console.log(res)
         if (res.data.HeWeather6[0].status!='ok'){
-          var city = { name: obj.data.pcity };
-          obj.getWeatherInfo(city);         
-          return;
+          if (obj.data.pcity != null && obj.data.pcity != ''){
+            var city = { name: obj.data.pcity };
+            obj.getWeatherInfo(city);         
+            return;
+          } else {
+            Toast.fail("未查询到天气数据");
+            return;
+          }
         }
-
         var noww = res.data.HeWeather6[0].now;
-        var wea = {};
-        wea[param] = noww;
-        console.log(res.data);
-        obj.setWeatherInfo(noww);       
-        wx.setStorageSync("weather", wea);
+        obj.setWeatherInfo(param,noww);       
+        
       }
     })
   },
@@ -180,7 +194,8 @@ Page({
   },
   onSelect(e) {
     var city = { name: this.data.city};
-    var wea={};
+    var wea=wx.getStorageSync("weather");
+    wea[this.data.city]="",
     wx.setStorageSync("weather", wea);
     this.getWeatherInfo(city);
     this.onCancel();

@@ -1,0 +1,7 @@
+/* pages/map/map.wxss */
+
+.mapcontent{
+  height: 70%;
+  width: 95%;
+  margin: 10rpx auto;
+}

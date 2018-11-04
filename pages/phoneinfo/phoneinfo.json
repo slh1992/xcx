@@ -1,6 +1,6 @@
 {
   "navigationBarTitleText": "查看本机信息",
-  "disableScroll": false,
+  "disableScroll": true,
   "usingComponents": {
     "van-row": "/pages/vant-weapp/dist/row/index",
     "van-col": "/pages/vant-weapp/dist/col/index",

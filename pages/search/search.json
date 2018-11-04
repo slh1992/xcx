@@ -13,5 +13,6 @@
     "van-nav-bar": "/pages/vant-weapp/dist/nav-bar/index",
     "van-toast": "/pages/vant-weapp/dist/toast/index"
   },
+  "navigationBarTitleText": "城市查询",
   "disableScroll": true
 }

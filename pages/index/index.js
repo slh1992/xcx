@@ -18,6 +18,7 @@ Page({
     })
   },
   onLoad: function () {
+    
     if (app.globalData.userInfo) {
       this.setData({
         userInfo: app.globalData.userInfo,
@@ -68,7 +69,12 @@ Page({
   },
   toWeather:function(){
     wx.navigateTo({
-      url: '/pages/weather/weather'
+      url: '/pages/weather/weather?local=true'
+    })
+  },
+  toMap: function () {
+    wx.navigateTo({
+      url: '/pages/map/map'
     })
   },
   
