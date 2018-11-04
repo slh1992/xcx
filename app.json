@@ -20,20 +20,26 @@
       {
         "pagePath": "pages/index/index",
         "text": "首页",
-        "selectedColor": "#ffffff"
+        "iconPath": "/pages/img/home.png",
+        "selectedIconPath": "/pages/img/home_g.png"
       },
       {
         "pagePath": "pages/index/index",
-        "text": "乐酷"
+        "text": "乐酷",
+        "iconPath": "/pages/img/music.png",
+        "selectedIconPath": "/pages/img/music_g.png"
       },
       {
         "pagePath": "pages/index/index",
-        "text": "本地歌曲"
+        "text": "本地歌曲",
+        "iconPath": "/pages/img/video.png",
+        "selectedIconPath": "/pages/img/video_g.png"
       },
       {
         "pagePath": "pages/phoneinfo/phoneinfo",
         "text": "关于手机",
-        "selectedColor": "#ffffff"
+        "iconPath": "/pages/img/setting.png",
+        "selectedIconPath": "/pages/img/setting_g.png"
       }
     ]
   },

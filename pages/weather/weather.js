@@ -48,7 +48,7 @@ Page({
     pcity:"杭州市",
     isshow: false,
     actions: [
-      { name: "刷新天气", subname: "获取实时天气" }
+      { name: "刷新天气", subname: "获取实时天气",className:"icon-refresh"}
     ],
     class:"iconqt",
     info:{}
@@ -131,6 +131,9 @@ Page({
   setWeatherInfo: function (key,data) {
     var wea = wx.getStorageSync("weather");
     console.log(wea);
+    if(wea==null||wea==''){
+      wea={};
+    }
     wea[key] = data;
     wx.setStorageSync("weather", wea);
     this.setData({ class: weather_codecontainer.get(data.cond_code) });
