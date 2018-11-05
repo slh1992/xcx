@@ -58,8 +58,9 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    wx.showLoading({
-      title: '加载数据...',
+    Toast.loading({
+      mask: true,
+      message: '加载中...'
     });
     console.log(options.city)
     if(options.city!=null&&options.city!=''){
@@ -138,6 +139,7 @@ Page({
     wx.setStorageSync("weather", wea);
     this.setData({ class: weather_codecontainer.get(data.cond_code) });
     this.setData({ info: data });
+    Toast.clear();
   },
   /**
  * city={name:"北京市",lat:"39.90498734",lon:"116.4052887"}

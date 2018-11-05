@@ -1,0 +1,9 @@
+<!--pages/welcome/welcome.wxml-->
+<swiper indicator-dots='true' circular='true'>
+  <block wx:for="{{imgs}}" wx:for-index="index" wx:key="item">
+    <swiper-item>
+      <image class='swiper-img' src="{{item}}"></image>
+      <button class='button-img' type='primary' plain='ture' bindtap="toIndex" wx:if="{{index==imgs.length-1}}">立即体验</button>
+    </swiper-item>
+  </block>
+</swiper>
