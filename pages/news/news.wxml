@@ -1,0 +1,16 @@
+<!--pages/news/news.wxml-->
+<template name='newschild'>
+    <view class='news_block'> 
+      <label>
+        <icon type='success' color='#05e815'></icon>
+        <text class="news_text">{{name}}</text>
+      </label>     
+    </view>
+</template>
+
+<view class='news_container'>
+  <block wx:for="{{children}}" wx:key="item" wx:index="index">
+      <template is="newschild" data="{{...item}}"/>
+  </block>
+</view>
+

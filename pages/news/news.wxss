@@ -1,0 +1,27 @@
+/* pages/news/news.wxss */
+.news_container{
+  display: flex;
+  flex-flow: row wrap;
+  align-content: center;
+  height: 100%;
+  width: 100%;
+  margin-top:50rpx;
+}
+.news_block{
+  display: flex;
+  align-content: center;
+  width: 30%;
+  height: 100rpx;
+  border: 1px solid #eae1b1;
+  border-radius: 10rpx;
+  margin: 10rpx;
+  box-shadow: 5rpx 5rpx #c0c0c0;
+}
+
+.news_text{
+  font-size: 14px;
+  font-weight: bold;
+  color: #eae1b1;
+  margin: 5rpx auto;
+  padding: 0rpx 5rpx;
+}

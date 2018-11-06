@@ -5,7 +5,8 @@
     "pages/search/search",
     "pages/phoneinfo/phoneinfo",
     "pages/weather/weather",
-    "pages/map/map"
+    "pages/map/map",
+    "pages/news/news"
   ],
   "requiredBackgroundModes": [
     "audio"
@@ -25,10 +26,10 @@
         "selectedIconPath": "/pages/img/home_g.png"
       },
       {
-        "pagePath": "pages/index/index",
-        "text": "乐酷",
-        "iconPath": "/pages/img/music.png",
-        "selectedIconPath": "/pages/img/music_g.png"
+        "pagePath": "pages/news/news",
+        "text": "新闻快递",
+        "iconPath": "/pages/img/news.png",
+        "selectedIconPath": "/pages/img/news_g.png"
       },
       {
         "pagePath": "pages/index/index",
@@ -56,6 +57,7 @@
     "van-search": "/pages/vant-weapp/dist/search/index",
     "van-cell-group": "/pages/vant-weapp/dist/cell-group/index",
     "van-nav-bar": "/pages/vant-weapp/dist/nav-bar/index",
-    "van-toast": "/pages/vant-weapp/dist/toast/index"
+    "van-toast": "/pages/vant-weapp/dist/toast/index",
+    "van-dialog": "/pages/vant-weapp/dist/dialog/index"
   }
 }
