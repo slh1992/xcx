@@ -6,7 +6,8 @@
     "pages/phoneinfo/phoneinfo",
     "pages/weather/weather",
     "pages/map/map",
-    "pages/news/news"
+    "pages/news/news",
+    "pages/news/child/children"
   ],
   "requiredBackgroundModes": [
     "audio"

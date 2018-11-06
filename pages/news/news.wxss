@@ -3,9 +3,8 @@
   display: flex;
   flex-flow: row wrap;
   align-content: center;
-  height: 100%;
+  height: 50%;
   width: 100%;
-  margin-top:50rpx;
 }
 .news_block{
   display: flex;

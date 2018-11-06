@@ -5,18 +5,18 @@ Page({
    * 页面的初始数据
    */
   data: {
-    children:[
-      { name: "社会新闻", url:"http://api.tianapi.com/social/?key=APIKEY&num=10"},
-      { name: "国内新闻", url: "http://api.tianapi.com/guonei/?key=APIKEY&num=10" },
-      { name: "国际新闻", url: "http://api.tianapi.com/world/?key=APIKEY&num=10" },
-      { name: "体育新闻", url: "http://api.tianapi.com/tiyu/?key=APIKEY&num=10" },
-      { name: "军事新闻", url: "http://api.tianapi.com/military/?key=APIKEY&num=10" },
-      { name: "娱乐花边", url: "http://api.tianapi.com/huabian/?key=APIKEY&num=10" },
-      { name: "NBA新闻", url: "http://api.tianapi.com/nba/?key=APIKEY&num=10" },
-      { name: "足球新闻", url: "http://api.tianapi.com/football/?key=APIKEY&num=10" },
-      { name: "IT资讯", url: "http://api.tianapi.com/it/?key=APIKEY&num=10" }
+    newsurls:[
+      { name: "社会新闻", path: "http://api.tianapi.com/social/?key=17410d4d0769aa5f4a15781550e09677&num=10"},
+      { name: "国内新闻", path: "http://api.tianapi.com/guonei/?key=17410d4d0769aa5f4a15781550e09677&num=10" },
+      { name: "国际新闻", path: "http://api.tianapi.com/world/?key=17410d4d0769aa5f4a15781550e09677&num=10" },
+      { name: "体育新闻", path: "http://api.tianapi.com/tiyu/?key=17410d4d0769aa5f4a15781550e09677&num=10" },
+      { name: "军事新闻", path: "http://api.tianapi.com/military/?key=17410d4d0769aa5f4a15781550e09677&num=10" },
+      { name: "娱乐花边", path: "http://api.tianapi.com/huabian/?key=17410d4d0769aa5f4a15781550e09677&num=10" },
+      { name: "NBA新闻", path: "http://api.tianapi.com/nba/?key=17410d4d0769aa5f4a15781550e09677&num=10" },
+      { name: "足球新闻", path: "http://api.tianapi.com/football/?key=17410d4d0769aa5f4a15781550e09677&num=10" },
+      { name: "IT资讯", path: "http://api.tianapi.com/it/?key=17410d4d0769aa5f4a15781550e09677&num=10" }
     ],
-
+    topage:"pages/news/child/children"
   },
 
   /**
@@ -73,5 +73,14 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+
+  toNewsPage:function(e){
+    var obj=this;
+    var path=e.currentTarget.dataset['path'];
+    var title = e.currentTarget.dataset['title'];
+    wx.navigateTo({
+      url: obj.data.topage + "?url=" + path + "&title=" + title,
+    })
   }
 })
