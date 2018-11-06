@@ -16,7 +16,7 @@ Page({
       { name: "足球新闻", path: "http://api.tianapi.com/football/?key=17410d4d0769aa5f4a15781550e09677&num=10" },
       { name: "IT资讯", path: "http://api.tianapi.com/it/?key=17410d4d0769aa5f4a15781550e09677&num=10" }
     ],
-    topage:"pages/news/child/children"
+    topage:"/pages/news/child/children"
   },
 
   /**
