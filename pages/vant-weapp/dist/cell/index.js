@@ -4,6 +4,7 @@ VantComponent({
   classes: ['title-class', 'label-class', 'value-class'],
   mixins: [link],
   props: {
+    img:null,
     title: null,
     value: null,
     icon: String,

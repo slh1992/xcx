@@ -6,15 +6,15 @@ Page({
    */
   data: {
     newsurls:[
-      { name: "社会新闻", path: "http://api.tianapi.com/social/?key=17410d4d0769aa5f4a15781550e09677&num=10"},
-      { name: "国内新闻", path: "http://api.tianapi.com/guonei/?key=17410d4d0769aa5f4a15781550e09677&num=10" },
-      { name: "国际新闻", path: "http://api.tianapi.com/world/?key=17410d4d0769aa5f4a15781550e09677&num=10" },
-      { name: "体育新闻", path: "http://api.tianapi.com/tiyu/?key=17410d4d0769aa5f4a15781550e09677&num=10" },
-      { name: "军事新闻", path: "http://api.tianapi.com/military/?key=17410d4d0769aa5f4a15781550e09677&num=10" },
-      { name: "娱乐花边", path: "http://api.tianapi.com/huabian/?key=17410d4d0769aa5f4a15781550e09677&num=10" },
-      { name: "NBA新闻", path: "http://api.tianapi.com/nba/?key=17410d4d0769aa5f4a15781550e09677&num=10" },
-      { name: "足球新闻", path: "http://api.tianapi.com/football/?key=17410d4d0769aa5f4a15781550e09677&num=10" },
-      { name: "IT资讯", path: "http://api.tianapi.com/it/?key=17410d4d0769aa5f4a15781550e09677&num=10" }
+      { name: "社会新闻", newstype: "social"},
+      { name: "国内新闻", newstype: "guonei" },
+      { name: "国际新闻", newstype: "world" },
+      { name: "体育新闻", newstype: "tiyu" },
+      { name: "军事新闻", newstype: "military" },
+      { name: "娱乐花边", newstype: "huabian" },
+      { name: "NBA新闻", newstype: "nba" },
+      { name: "足球新闻", newstype: "football" },
+      { name: "IT资讯", newstype: "it" }
     ],
     topage:"/pages/news/child/children"
   },
@@ -77,10 +77,10 @@ Page({
 
   toNewsPage:function(e){
     var obj=this;
-    var path=e.currentTarget.dataset['path'];
+    var newstype = e.currentTarget.dataset['newstype'];
     var title = e.currentTarget.dataset['title'];
     wx.navigateTo({
-      url: obj.data.topage + "?url=" + path + "&title=" + title,
+      url: obj.data.topage + "?newstype=" + newstype + "&title=" + title,
     })
   }
 })

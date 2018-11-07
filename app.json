@@ -7,7 +7,8 @@
     "pages/weather/weather",
     "pages/map/map",
     "pages/news/news",
-    "pages/news/child/children"
+    "pages/news/child/children",
+    "pages/webpage/webview"
   ],
   "requiredBackgroundModes": [
     "audio"

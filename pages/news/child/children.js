@@ -1,28 +1,37 @@
 // pages/news/child/children.js
-Page({
+import Toast from '../../vant-weapp/dist/toast/toast';
 
+Page({
   /**
    * 页面的初始数据
    */
   data: {
     word:"",
     title:"新闻",
-    url:"",
-    data:[]
+    reqKey:'17410d4d0769aa5f4a15781550e09677',
+    newstype:'',
+    data:[],
+    pageindex:1,
+    pagesize:10
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.setData({url:options.url,title:options.title});
+    this.setData({ newstype: options.newstype,title:options.title});
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-
+    var params={
+      key: this.data.reqKey,
+      num: this.data.pagesize,
+      page: this.data.pageindex,
+    }
+    this.searchInfo(params);
   },
 
   /**
@@ -65,5 +74,25 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+  searchInfo:function(params){
+    Toast.loading({
+      mask: true,
+      message: '加载中...'
+    });
+    var obj = this;
+    wx.request({
+      url: 'http://api.tianapi.com/' + obj.data.newstype + '/',
+      data: params,
+      success: res => {
+        console.log(res)
+        if (res.data.code != '200') {
+          Toast.fail(res.data.msg);
+          return;
+        }
+        obj.setData({ data: res.data.newslist });
+        Toast.clear();
+      }
+    })
   }
 })

@@ -1,7 +1,7 @@
 <!--pages/news/news.wxml-->
 <template name='newschild'>
     <view class='news_block'> 
-      <label bindtap='toNewsPage' data-path="{{path}}" data-title="{{name}}">
+      <label bindtap='toNewsPage' data-newstype="{{newstype}}" data-title="{{name}}">
         <icon type='success' color='#05e815'></icon>
         <text class="news_text">{{name}}</text>
       </label>     

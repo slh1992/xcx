@@ -3,6 +3,12 @@
   style="{{ customStyle }}"
   bind:tap="onClick"
 >
+  <block wx:if="{{img}}">
+    <image src='{{img}}'
+    class="van-cell__left-icon-wrap van-cell_img"
+    custom-class="van-cell__left-icon"/>
+  </block>
+
   <van-icon
     wx:if="{{ icon }}"
     name="{{ icon }}"
@@ -22,10 +28,12 @@
     <slot wx:else name="title" />
   </view>
 
+<block wx:if="{{ value }}">
   <view class="van-cell__value value-class">
     <block wx:if="{{ value }}">{{ value }}</block>
     <slot wx:else />
   </view>
+</block>  
 
   <van-icon
     wx:if="{{ isLink }}"

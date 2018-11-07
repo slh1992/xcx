@@ -1,0 +1,8 @@
+<!--pages/webpage/webview.wxml-->
+ <van-nav-bar title="{{title}}" left-text="返回" left-arrow fixed="true" bind:click-left="backToOld">
+    <van-icon name="wap-nav" slot="right" bind:click="showMenu"/>
+  </van-nav-bar>
+  <van-panel>
+    <web-view src="{{url}}" ></web-view>
+  </van-panel>
+  
