@@ -10,9 +10,15 @@ Page({
     title:"新闻",
     reqKey:'17410d4d0769aa5f4a15781550e09677',
     newstype:'',
-    data:[],
+    newsdata:[],
     pageindex:1,
     pagesize:10
+  },
+
+  computed:{
+    isempty:function(){
+      return (this.data.newsdata!=null&&this.data.newsdata!=''&&this.data.newsdata.length>0)
+    }
   },
 
   /**
@@ -59,14 +65,27 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-
+    
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-
+    // 显示加载图标
+    wx.showLoading({
+      title: '玩命加载中...',
+    })
+    var index=this.data.pageindex;
+    index++;
+    var params = {
+      key: this.data.reqKey,
+      num: this.data.pagesize,
+      page: index,
+    }
+    this.setData({pageindex:index});
+    this.searchInfo(params);
+    wx.hideLoading();
   },
 
   /**
@@ -82,7 +101,7 @@ Page({
     });
     var obj = this;
     wx.request({
-      url: 'http://api.tianapi.com/' + obj.data.newstype + '/',
+      url: 'https://api.tianapi.com/' + obj.data.newstype + '/',
       data: params,
       success: res => {
         console.log(res)
@@ -90,7 +109,12 @@ Page({
           Toast.fail(res.data.msg);
           return;
         }
-        obj.setData({ data: res.data.newslist });
+        var newsall = obj.data.newsdata;
+        for (var i=0;i<res.data.newslist.length;i++){
+          newsall.push(res.data.newslist[i]);
+        }
+        console.log(newsall)
+        obj.setData({ newsdata: newsall });
         Toast.clear();
       }
     })

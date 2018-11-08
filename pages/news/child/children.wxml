@@ -1,18 +1,21 @@
 <!--pages/news/child/children.wxml-->
+
 <van-search value="{{word}}" placeholder="请输入搜索关键词"
   error="{{true}}"
   use-action-slot="{{true}}"
   bind:search="searchNews"
   bind:change="changKey"
+  custom-class="posi-fixed"
 >
 <view slot="action" bind:tap="searchNews">搜索</view>
 </van-search>
-
+<view class="content">
 <van-cell-group>
-  <block wx:if="{{citysempty}}" ><view><text class="msg">未查询到新闻数据</text></view></block>
+  <block wx:if="{{isempty}}" ><view><text class="msg">未查询到新闻数据</text></view></block>
   <block wx:else>
-    <van-cell img="{{item.picUrl}}" title="{{item.title}}" label="{{item.description}} {{item.ctime}}" is-link wx:key="item" wx:for="{{data}}" url="/pages/webpage/webview?url={{item.url}}&title={{item.description}}"></van-cell>
+    <van-cell img="{{item.picUrl}}" title="{{item.title}}" label="{{item.description}} {{item.ctime}}" is-link wx:key="item" wx:for="{{newsdata}}" url="/pages/webpage/webview?url={{item.url}}&title={{item.description}}"></van-cell>
   </block>    
 </van-cell-group>
 
 <van-toast id="van-toast" />
+</view>
